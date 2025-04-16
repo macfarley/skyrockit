@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Editing <%= application.title %></title>
-</head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="edit-body">
     <h1>Edit <%= application.title %> at <%= application.company %></h1>
-
-    <form
-    action="/users/<%= user._id %>/applications/<%= application._id %>?_method=PUT" method="POST">
+    <form action="/users/<%= user._id %>/applications/<%= application._id %>?_method=PUT" method="POST">
         <label for="company">Company:</label>
         <input
           type="text"
@@ -50,8 +51,7 @@
             >Accepted</option>
         </select>
     <button type="submit">Submit</button>
-
-    </form>
+    </form></div>
   
 </body>
 </html>
